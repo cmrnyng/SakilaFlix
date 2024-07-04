@@ -5,7 +5,11 @@ import { useState } from "react";
 import useOnOutsideClick from "../hooks/useOnClickOutside";
 import { motion, AnimatePresence } from "framer-motion";
 
-const NavBar = () => {
+interface NavBarProps {
+  handleSearch: React.ChangeEventHandler<HTMLInputElement>;
+}
+
+const NavBar: React.FC<NavBarProps> = ({ handleSearch }) => {
   const [active, setActive] = useState<boolean>(false);
   const { innerBorderRef } = useOnOutsideClick<HTMLInputElement>(() => setActive(false));
 
@@ -35,6 +39,7 @@ const NavBar = () => {
                   id="search"
                   name="search"
                   placeholder="Search by title"
+                  onChange={handleSearch}
                 />
               </motion.div>
             )}

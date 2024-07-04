@@ -5,12 +5,8 @@ import { AnimatePresence } from "framer-motion";
 import PopupCard from "./PopupCard";
 import MoviePage from "../MoviePage/MoviePage";
 
-interface CardProps {
-  op?: boolean;
-}
-
-const Card: React.FC<CardProps> = ({ op }) => {
-  const [hover, setHover] = useState<boolean>(op || false);
+const Card: React.FC = () => {
+  const [hover, setHover] = useState<boolean>(false);
   const [clicked, setClicked] = useState<boolean>(false);
   const [popupPosition, setPopupPosition] = useState<"left" | "" | "right">("");
   const card = useRef<HTMLDivElement>(null);
