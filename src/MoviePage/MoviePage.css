@@ -59,7 +59,7 @@
   font-size: 2.2em;
 }
 
-.left {
+.moviepage-left {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -87,7 +87,7 @@
   margin-top: 1em;
 }
 
-.right {
+.moviepage-right {
   width: 50%;
   display: flex;
   flex-direction: column;

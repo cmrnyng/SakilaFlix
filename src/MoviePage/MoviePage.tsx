@@ -34,7 +34,7 @@ const MoviePage: React.FC<MoviePageProps> = ({ setClicked }) => {
           <img src={placeholder} className="moviepage-img nobottomrounding" />
         </div>
         <div className="main-content">
-          <div className="left">
+          <div className="moviepage-left">
             <h1>ANACONDA CONFESSIONS</h1>
             <div className="row">
               <div className="rating bigger">NC-17</div>
@@ -47,7 +47,7 @@ const MoviePage: React.FC<MoviePageProps> = ({ setClicked }) => {
               nam ratione, est animi sed unde dicta! Distinctio, ea.
             </p>
           </div>
-          <div className="right">
+          <div className="moviepage-right">
             <p className="moviepage-details">
               <span>Genres: </span>Action
             </p>
