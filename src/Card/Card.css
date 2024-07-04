@@ -1,0 +1,149 @@
+.card-container {
+  background: #181818;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  position: relative;
+}
+
+.img-container {
+  position: relative;
+}
+
+.movie-img {
+  width: 400px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  user-select: none;
+}
+
+.movie-info {
+  color: ivory;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0.3em 1em 0.5em 1em;
+  background-color: #181818;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  font-family: "Satoshi";
+  gap: 0.1em;
+}
+
+.title-container {
+  position: absolute;
+  top: 58%;
+  width: 100%;
+  height: 82px;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+}
+
+.movie-title {
+  color: black;
+  font-family: "Plus-Jakarta-Sans";
+  font-size: 2em;
+  padding-left: 0.5em;
+  user-select: none;
+  text-shadow: 0 0 2px rgb(83, 83, 83);
+}
+
+.additional-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7em;
+  align-items: center;
+  gap: 0.5em;
+  justify-content: center;
+  color: rgb(175, 175, 175);
+}
+
+.popup-container {
+  user-select: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.nobottomrounding {
+  border-radius: 10px 10px 0 0;
+}
+
+.popup-container.right {
+  left: 20%;
+}
+
+.popup-container.left {
+  left: -20%;
+}
+
+.popup-title {
+  font-family: "Plus-Jakarta-Sans";
+  font-size: 1.3em;
+  line-height: 1.1em;
+}
+
+.desc {
+  font-size: 0.7em;
+}
+
+.title-length {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.title-length > .length {
+  color: rgb(175, 175, 175);
+  font-size: 0.8em;
+}
+
+.title-rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.rating {
+  user-select: none;
+  font-size: 0.5em;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  font-family: "Satoshi";
+  height: 16px;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+}
+
+.upper-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.divider {
+  width: 1px;
+  margin: 5px;
+  background-color: rgb(175, 175, 175);
+  min-height: 100%;
+}

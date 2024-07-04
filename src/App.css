@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Variable.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DM-Mono";
+  src: url("/fonts/DMMono-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Plus-Jakarta-Sans";
+  src: url("/fonts/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+}
+
+main {
+  padding: 16em 2em 2em 2em;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-items: center;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 7em 1em;
+  align-self: center;
+}
+
+.view-cast {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  padding: 0.1em 0.8em;
+  border-radius: 10px;
+  font-family: "Satoshi";
+  font-size: 0.8em;
+}

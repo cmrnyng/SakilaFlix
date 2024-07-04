@@ -1,0 +1,112 @@
+.container {
+  width: 100%;
+  height: fit-content;
+  background-image: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #0a0a0a 25%,
+    #0f0f0f 50%,
+    #121212 75%,
+    #141414 100%
+  );
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 99;
+}
+
+.logo {
+  user-select: none;
+  pointer-events: none;
+  height: 86px;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1em 3em;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.3em 0.5em;
+  gap: 0.5em;
+  transition: border 0.3s ease-in-out, border-radius 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+}
+
+.search-container.open {
+  border: 2px solid white;
+  border-radius: 15px;
+  background-color: black;
+}
+
+.search-icon {
+  height: 35px;
+  user-select: none;
+}
+
+.search-icon:hover {
+  cursor: pointer;
+}
+
+#search {
+  max-height: 3em;
+  border: none;
+  background-color: transparent;
+  color: white;
+  width: 100%;
+  font-size: 1.5em;
+  font-family: "Satoshi";
+}
+
+#search:focus {
+  outline: none;
+}
+
+.input-wrapper {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.filter-sort {
+  color: white;
+  font-family: "Plus-Jakarta-Sans";
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 4em;
+  user-select: none;
+}
+
+.filter-sort > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
+.filter-sort > div > p {
+  font-size: 1.2em;
+}
+
+.dropdown {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  font-size: 1.4em;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+  border-radius: 15px;
+  font-family: "Plus-Jakarta-Sans";
+}
