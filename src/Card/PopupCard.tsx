@@ -1,12 +1,17 @@
 import placeholder from "../assets/placeholder.png";
+import { Movie } from "../hooks/useMovieSearch";
 import "./Card.css";
 import { motion } from "framer-motion";
+import { convertLength } from "../App";
 
 interface PopupCardProps {
   position: "left" | "" | "right";
+  movie: Movie;
 }
 
-const PopupCard: React.FC<PopupCardProps> = ({ position }) => {
+const PopupCard: React.FC<PopupCardProps> = ({ position, movie }) => {
+  const { title, description, language, length, rating, category } = movie;
+
   return (
     <motion.div
       className={`popup-container ${position}`}
@@ -22,20 +27,17 @@ const PopupCard: React.FC<PopupCardProps> = ({ position }) => {
         <div className="upper-sec">
           <div className="title-length">
             <div className="title-rating">
-              <h3 className="popup-title">ANACONDA CONFESSIONS</h3>
-              <div className="rating">NC-17</div>
+              <h3 className="popup-title">{title}</h3>
+              <div className="rating">{rating}</div>
             </div>
-            <p className="length">1hr 49m</p>
-            <p className="desc">
-              A Astounding Reflection of a Lumberjack And a Car who must Sink a Lumberjack in A
-              Baloon Factory
-            </p>
+            <p className="length">{convertLength(length)}</p>
+            <p className="desc">{description}</p>
           </div>
         </div>
         <div className="divider"></div>
         <div className="additional-info">
-          <p>English</p>
-          <p>Action</p>
+          <p>{language?.name}</p>
+          <p>{category?.name}</p>
         </div>
       </div>
     </motion.div>

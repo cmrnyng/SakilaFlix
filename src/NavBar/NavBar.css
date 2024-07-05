@@ -110,3 +110,7 @@
   border-radius: 15px;
   font-family: "Plus-Jakarta-Sans";
 }
+
+select option {
+  font-family: "Plus-Jakarta-Sans";
+}

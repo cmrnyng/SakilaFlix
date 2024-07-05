@@ -1,12 +1,17 @@
+import { convertLength, convertName } from "../App";
 import placeholder from "../assets/placeholder.png";
+import { Movie } from "../hooks/useMovieSearch";
 import "./MoviePage.css";
 import React, { useEffect } from "react";
 
 interface MoviePageProps {
   setClicked: React.Dispatch<React.SetStateAction<boolean>>;
+  movie: Movie;
 }
 
-const MoviePage: React.FC<MoviePageProps> = ({ setClicked }) => {
+const MoviePage: React.FC<MoviePageProps> = ({ setClicked, movie }) => {
+  const { title, description, releaseYear, language, length, rating, category, cast } = movie;
+
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       console.log(e.key);
@@ -35,24 +40,28 @@ const MoviePage: React.FC<MoviePageProps> = ({ setClicked }) => {
         </div>
         <div className="main-content">
           <div className="moviepage-left">
-            <h1>ANACONDA CONFESSIONS</h1>
+            <h1>{title}</h1>
             <div className="row">
-              <div className="rating bigger">NC-17</div>
-              <p className="moviepage-info">2017</p>
-              <p className="moviepage-info">1hr 49m</p>
+              <div className="rating bigger">{rating}</div>
+              <p className="moviepage-info">{releaseYear}</p>
+              <p className="moviepage-info">{convertLength(length)}</p>
+              <p className="moviepage-info">{language.name}</p>
             </div>
-            <p className="moviepage-desc">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate nisi molestias
-              maxime sunt illo possimus reprehenderit ullam dolores, quidem voluptatibus doloremque,
-              nam ratione, est animi sed unde dicta! Distinctio, ea.
-            </p>
+            <p className="moviepage-desc">{description}</p>
           </div>
           <div className="moviepage-right">
             <p className="moviepage-details">
-              <span>Genres: </span>Action
+              <span>Genres: </span>
+              {category?.name}
             </p>
             <p className="moviepage-details">
-              <span>Cast: </span>People People
+              <span>Cast: </span>
+              {cast.map((actor, index) => (
+                <span key={index}>
+                  {convertName(actor.firstName + " " + actor.lastName)}
+                  {index !== cast.length - 1 ? ", " : ""}
+                </span>
+              ))}
             </p>
           </div>
         </div>

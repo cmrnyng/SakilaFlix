@@ -96,6 +96,6 @@
   gap: 0.5em;
 }
 
-.moviepage-details > span {
+.moviepage-details > span:first-child {
   color: #5d5d5d;
 }

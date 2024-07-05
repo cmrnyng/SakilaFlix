@@ -4,8 +4,13 @@ import { useState, useRef, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import PopupCard from "./PopupCard";
 import MoviePage from "../MoviePage/MoviePage";
+import { Movie } from "../hooks/useMovieSearch";
 
-const Card: React.FC = () => {
+interface CardProps {
+  movie: Movie;
+}
+
+const Card: React.FC<CardProps> = ({ movie }) => {
   const [hover, setHover] = useState<boolean>(false);
   const [clicked, setClicked] = useState<boolean>(false);
   const [popupPosition, setPopupPosition] = useState<"left" | "" | "right">("");
@@ -43,13 +48,13 @@ const Card: React.FC = () => {
       <div className="img-container">
         <img className="movie-img" src={placeholder} draggable="false" />
         <div className="title-container">
-          <h3 className="movie-title">ANACONDA CONFESSIONS</h3>
+          <h3 className="movie-title">{movie.title}</h3>
         </div>
       </div>
       <AnimatePresence>
-        {hover && !clicked && <PopupCard position={popupPosition} />}
+        {hover && !clicked && <PopupCard position={popupPosition} movie={movie} />}
       </AnimatePresence>
-      {clicked && <MoviePage setClicked={setClicked} />}
+      {clicked && <MoviePage setClicked={setClicked} movie={movie} />}
     </div>
   );
 };
